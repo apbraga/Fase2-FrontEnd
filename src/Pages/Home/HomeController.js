@@ -1,25 +1,19 @@
-import React, {useState, useEffect, useRef} from 'react';
-import HomeView from './HomeView'
-import HomeModel from './HomeModel'
-
+/**
+ * Controller da page Home
+ */
+import React from 'react';
+//Vamos comentar o HomeView por enquanto
+//import HomeView from './HomeView'
+//Importa os componentes
+import BusLineController from '../../Components/BusLine/BusLineController';
+import BusPositionController from '../../Components/BusPosition/BusPositionController';
 const HomeController = () => {
-    const [count, setCount] = useState(0);
-    const homeModel = useRef(null);
-    useEffect(() => {
-        homeModel.current = new HomeModel();
-        homeModel.current.getSomeInfo();
-        const interval = setInterval(() => {
-            setCount(count + 1)
-        }, 1000);
-        return() =>{
-            clearInterval(interval);
-        };
-    },[])
-    console.log(" Count " + count);
+    //Adiciona o BusLineController e BusPosition
     return (
-        <HomeView count_info={count}>
-            <div> Teste Info </div>
-        </HomeView>
+        <div className="App">
+            <BusLineController />
+            <BusPositionController />
+        </div>
     )
 }
 export default HomeController;
