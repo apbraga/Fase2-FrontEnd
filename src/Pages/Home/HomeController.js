@@ -6,10 +6,10 @@ class HomeController extends React.Component {
         super();
         this.state = {
             count: 0,
-        }; //inicializando o state
-        this.homeModel = new HomeModel();//inicializando o view
+        }; //initialization o state
+        this.homeModel = new HomeModel();//initialization o view
         this.homeModel.getSomeInfo();
-        // Inicializando o timeout
+        // Initialization o timeout
         setInterval(() => {
             this.setState({count: this.state.count + 1})
         },1000);
@@ -17,7 +17,9 @@ class HomeController extends React.Component {
     render() {
         console.log(" Count " + this.state.count);
         return (
-            <HomeView /> //Chamando o View
+            <HomeView count_info={this.state.count}>
+                <div> Teste Info</div>
+            </HomeView>
         )
     }
 }
