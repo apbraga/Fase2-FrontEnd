@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import HomeController from './Pages/Home/HomeController';
+import reportWebVitals from "./reportWebVitals";
 //Importa o store
 import store from './store/store';
 //Importa o Provider do React Redux
@@ -15,3 +16,4 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+reportWebVitals()
